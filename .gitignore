@@ -19,6 +19,7 @@ chroma_db/
 
 
 
+
 # Node.js
 node_modules/
 remotion/dist/
@@ -35,3 +36,5 @@ remotion/node_modules/
 .pytest_cache/
 .coverage
 htmlcov/
+
+.chroma/

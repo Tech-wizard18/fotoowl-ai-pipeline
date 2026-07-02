@@ -9,7 +9,7 @@ class Config:
 
     # All free unlimited via Groq  
     # Vision: llama-3.2-90b-vision-preview is decommissioned, use llama-3.2-11b-vision-preview
-    VISION_MODEL: str   = os.getenv("VISION_MODEL",   "llama-3.2-11b-vision-preview")
+    VISION_MODEL: str = os.getenv("VISION_MODEL", "meta-llama/llama-4-scout-17b-16e-instruct")
     CREATIVE_MODEL: str = os.getenv("CREATIVE_MODEL", "llama-3.3-70b-versatile")
     UTILITY_MODEL: str  = os.getenv("UTILITY_MODEL",  "llama-3.3-70b-versatile")
 

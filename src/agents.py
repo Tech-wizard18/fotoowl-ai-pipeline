@@ -46,42 +46,43 @@ def parse_intent_node(state: dict) -> dict:
 # ── Agent 1: Image Analyzer ───────────────────────────────────────────────────
 
 def analyze_images_node(state: dict) -> dict:
-    """Analyze images - using text model with generic descriptions since Groq vision models are decommissioned."""
+    """Analyze each image with a real vision-capable model (Groq Llama 4 Scout)."""
     intent = VideoIntent(**state["intent"])
     images = _get_images(state["image_folder"])
 
     if not images:
         return {**state, "error": "No images found", "status": "failed"}
 
-    # Generate realistic analyses based on filename patterns
+    vision_llm = _llm(config.VISION_MODEL).with_structured_output(ImageAnalysis)
     analyses = []
-    for i, img_path in enumerate(images, 1):
-        filename = Path(img_path).stem.lower()
-        
-        # Generic neutral descriptions based on position in the set
-        descriptions = [
-            ("Opening scene with vibrant atmosphere",       "energetic",  ["people", "venue"]),
-            ("Group of people gathered at the event",       "cheerful",   ["people", "group"]),
-            ("Wide shot of the event space",                "lively",     ["venue", "crowd"]),
-            ("Candid moment captured at the event",         "joyful",     ["people", "moment"]),
-            ("Highlight moment from the event",             "exciting",   ["people", "action"]),
-            ("Close-up detail shot from the event",         "intimate",   ["detail", "texture"]),
-            ("People enjoying the event together",          "happy",      ["people", "smiles"]),
-            ("Scenic overview of the event location",       "calm",       ["venue", "scenery"]),
-            ("Special moment shared between attendees",     "warm",       ["people", "connection"]),
-            ("Closing scene of the event",                  "nostalgic",  ["people", "ending"]),
-        ]
-        idx = (i - 1) % len(descriptions)
-        desc, mood, subjects = descriptions[idx]
-        
-        analyses.append(ImageAnalysis(
-            image_path=img_path,
-            description=desc,
-            quality_score=0.85,
-            prominent_subjects=subjects,
-            mood=mood,
-            suggested_duration=3.5 if intent.pacing == "slow" else 2.0 if intent.pacing == "medium" else 1.5,
-        ).model_dump())
+    for img_path in images:
+        b64 = _encode_image(img_path)
+        try:
+            result: ImageAnalysis = vision_llm.invoke([
+                SystemMessage(content=(
+                    "You are analysing an event photo for a highlight-reel pipeline. "
+                    "Describe what's actually visible in the image, list prominent "
+                    "subjects, estimate its mood, and suggest a display duration in "
+                    f"seconds appropriate for '{intent.pacing}' pacing."
+                )),
+                HumanMessage(content=[
+                    {"type": "text", "text": f"Analyse this image: {Path(img_path).name}"},
+                    {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64}"}},
+                ]),
+            ])
+            result.image_path = img_path
+            analyses.append(result.model_dump())
+        except Exception as e:
+            # Don't let one bad image kill the whole pipeline — log and fall back
+            # to a neutral placeholder for that single image only.
+            analyses.append(ImageAnalysis(
+                image_path=img_path,
+                description=f"[vision call failed: {e}]",
+                quality_score=0.5,
+                prominent_subjects=["unknown"],
+                mood="neutral",
+                suggested_duration=3.5 if intent.pacing == "slow" else 2.0 if intent.pacing == "medium" else 1.5,
+            ).model_dump())
 
     return {**state, "image_analyses": analyses, "status": "images_analyzed"}
 
@@ -189,7 +190,8 @@ def compile_and_fix_node(state: dict) -> dict:
         comp = CompilationResult(success=ok, error_message=None if ok else f"Check failed: {e}")
 
     new_retry = state["retry_count"] + (0 if comp.success else 1)
-    return {**state, "compilation_result": comp.model_dump(), "retry_count": new_retry}
+    new_status = "compiled" if comp.success else "compile_failed"
+    return {**state, "compilation_result": comp.model_dump(), "retry_count": new_retry, "status": new_status}
 
 
 # ── Agent 5: Renderer ─────────────────────────────────────────────────────────
@@ -199,7 +201,6 @@ def render_node(state: dict) -> dict:
     out = os.path.abspath(os.path.join(config.OUTPUT_DIR, "reel.mp4"))
     remotion_dir = os.path.abspath(config.REMOTION_DIR)
     try:
-        # use shell=True so Windows can find npx in PATH
         cmd = f'npx remotion render src/Composition.tsx FotoOwlReel "{out}" --log error'
         res = subprocess.run(
             cmd,

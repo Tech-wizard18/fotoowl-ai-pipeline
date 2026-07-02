@@ -2,86 +2,46 @@
   "scenes": [
     {
       "image_path": "photo01.jpg",
-      "duration": 3.5,
-      "caption": "The event begins",
+      "duration": 3.0,
+      "caption": "Introduction",
       "transition_in": "fade",
       "transition_out": "fade",
       "timing_offset": 0.0
     },
     {
       "image_path": "photo02.jpg",
-      "duration": 3.5,
-      "caption": "Attendees gather and socialize",
+      "duration": 3.0,
+      "caption": "Rising Action",
       "transition_in": "fade",
       "transition_out": "fade",
-      "timing_offset": 3.5
-    },
-    {
-      "image_path": "photo03.jpg",
-      "duration": 3.5,
-      "caption": "The event space comes alive",
-      "transition_in": "fade",
-      "transition_out": "fade",
-      "timing_offset": 7.0
-    },
-    {
-      "image_path": "photo04.jpg",
-      "duration": 3.5,
-      "caption": "A candid moment of joy",
-      "transition_in": "fade",
-      "transition_out": "fade",
-      "timing_offset": 10.5
+      "timing_offset": 3.0
     },
     {
       "image_path": "photo05.jpg",
-      "duration": 3.5,
-      "caption": "The highlight of the event",
+      "duration": 5.0,
+      "caption": "Climax",
       "transition_in": "fade",
       "transition_out": "fade",
-      "timing_offset": 14.0
+      "timing_offset": 6.0
     },
     {
-      "image_path": "photo06.jpg",
-      "duration": 3.5,
-      "caption": "An intimate moment shared",
+      "image_path": "photo04.jpg",
+      "duration": 2.0,
+      "caption": "Falling Action",
       "transition_in": "fade",
       "transition_out": "fade",
-      "timing_offset": 17.5
-    },
-    {
-      "image_path": "photo07.jpg",
-      "duration": 3.5,
-      "caption": "Attendees enjoy the event together",
-      "transition_in": "fade",
-      "transition_out": "fade",
-      "timing_offset": 21.0
-    },
-    {
-      "image_path": "photo08.jpg",
-      "duration": 3.5,
-      "caption": "A scenic overview of the location",
-      "transition_in": "fade",
-      "transition_out": "fade",
-      "timing_offset": 24.5
+      "timing_offset": 11.0
     },
     {
       "image_path": "photo09.jpg",
-      "duration": 3.5,
-      "caption": "A special moment between attendees",
+      "duration": 2.0,
+      "caption": "Resolution",
       "transition_in": "fade",
       "transition_out": "fade",
-      "timing_offset": 28.0
-    },
-    {
-      "image_path": "photo10.jpg",
-      "duration": 3.5,
-      "caption": "The event comes to a close",
-      "transition_in": "fade",
-      "transition_out": "fade",
-      "timing_offset": 31.5
+      "timing_offset": 13.0
     }
   ],
-  "total_duration": 35.0,
+  "total_duration": 18.0,
   "style": "cinematic",
   "music_suggestion": null
 }

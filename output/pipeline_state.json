@@ -4,206 +4,170 @@
   "intent": {
     "pacing": "slow",
     "visual_style": "cinematic",
-    "caption_tone": "warm",
+    "caption_tone": "emotional",
     "transition_preference": "fade",
-    "emotion": "emotional"
+    "emotion": "warm"
   },
   "image_analyses": [
     {
       "image_path": "sample_images\\photo01.jpg",
-      "description": "Opening scene with vibrant atmosphere",
-      "quality_score": 0.85,
+      "description": "The image shows a white rectangle on a blue background with the text 'Photo 1' in the center of the rectangle and 'FotoOwl AI Sample' at the top center of the image.",
+      "quality_score": 0.5,
       "prominent_subjects": [
-        "people",
-        "venue"
+        "white rectangle",
+        "blue background"
       ],
-      "mood": "energetic",
-      "suggested_duration": 3.5
+      "mood": "neutral",
+      "suggested_duration": 3.0
     },
     {
       "image_path": "sample_images\\photo02.jpg",
-      "description": "Group of people gathered at the event",
-      "quality_score": 0.85,
+      "description": "The image shows a white rectangle with the text 'Photo 2' on a purple background.",
+      "quality_score": 0.5,
       "prominent_subjects": [
-        "people",
-        "group"
+        "white rectangle",
+        "text"
       ],
-      "mood": "cheerful",
-      "suggested_duration": 3.5
+      "mood": "neutral",
+      "suggested_duration": 3.0
     },
     {
       "image_path": "sample_images\\photo03.jpg",
-      "description": "Wide shot of the event space",
-      "quality_score": 0.85,
+      "description": "The image shows a green background with a white rectangle in the center. Inside the rectangle, there is a small text that says 'Photo 3'. At the top of the image, there is a small text that says 'FotoOwl AI Sample'.",
+      "quality_score": 0.8,
       "prominent_subjects": [
-        "venue",
-        "crowd"
+        "white rectangle",
+        "green background",
+        "text"
       ],
-      "mood": "lively",
-      "suggested_duration": 3.5
+      "mood": "neutral",
+      "suggested_duration": 2.0
     },
     {
       "image_path": "sample_images\\photo04.jpg",
-      "description": "Candid moment captured at the event",
-      "quality_score": 0.85,
+      "description": "The image shows a white rectangle with the text 'Photo 4' in the center, set against a yellow-orange background.",
+      "quality_score": 0.8,
       "prominent_subjects": [
-        "people",
-        "moment"
+        "white rectangle",
+        "text 'Photo 4'"
       ],
-      "mood": "joyful",
-      "suggested_duration": 3.5
+      "mood": "neutral",
+      "suggested_duration": 2.0
     },
     {
       "image_path": "sample_images\\photo05.jpg",
-      "description": "Highlight moment from the event",
-      "quality_score": 0.85,
+      "description": "The image shows a white rectangle with the text 'Photo 5' in the center, set against a red background with the text 'FotoOwl AI Sample' at the top. The overall composition is simple and clean.",
+      "quality_score": 0.8,
       "prominent_subjects": [
-        "people",
-        "action"
+        "white rectangle",
+        "text 'Photo 5'",
+        "red background",
+        "text 'FotoOwl AI Sample'"
       ],
-      "mood": "exciting",
-      "suggested_duration": 3.5
+      "mood": "neutral",
+      "suggested_duration": 5.0
     },
     {
       "image_path": "sample_images\\photo06.jpg",
-      "description": "Close-up detail shot from the event",
-      "quality_score": 0.85,
+      "description": "The image shows a white rectangle on a blue background with some text.",
+      "quality_score": 0.5,
       "prominent_subjects": [
-        "detail",
-        "texture"
+        "white rectangle",
+        "blue background",
+        "text"
       ],
-      "mood": "intimate",
-      "suggested_duration": 3.5
+      "mood": "neutral",
+      "suggested_duration": 2.0
     },
     {
       "image_path": "sample_images\\photo07.jpg",
-      "description": "People enjoying the event together",
-      "quality_score": 0.85,
+      "description": "The image shows a white rectangle with the text 'Photo 7' on a purple background.",
+      "quality_score": 0.5,
       "prominent_subjects": [
-        "people",
-        "smiles"
+        "white rectangle",
+        "text 'Photo 7'"
       ],
-      "mood": "happy",
-      "suggested_duration": 3.5
+      "mood": "neutral",
+      "suggested_duration": 2.0
     },
     {
       "image_path": "sample_images\\photo08.jpg",
-      "description": "Scenic overview of the event location",
-      "quality_score": 0.85,
+      "description": "The image shows a white rectangle with the text 'Photo8' on a green background.",
+      "quality_score": 0.5,
       "prominent_subjects": [
-        "venue",
-        "scenery"
+        "white rectangle",
+        "green background"
       ],
-      "mood": "calm",
-      "suggested_duration": 3.5
+      "mood": "neutral",
+      "suggested_duration": 2.0
     },
     {
       "image_path": "sample_images\\photo09.jpg",
-      "description": "Special moment shared between attendees",
-      "quality_score": 0.85,
+      "description": "The image shows a white rectangle with the text 'Photo 9' on an orange background.",
+      "quality_score": 0.8,
       "prominent_subjects": [
-        "people",
-        "connection"
+        "white rectangle",
+        "orange background"
       ],
-      "mood": "warm",
-      "suggested_duration": 3.5
+      "mood": "neutral",
+      "suggested_duration": 2.0
     },
     {
       "image_path": "sample_images\\photo10.jpg",
-      "description": "Closing scene of the event",
-      "quality_score": 0.85,
+      "description": "The image appears to be a placeholder or a template with a white square in the center, containing the text 'Photo 10'. The background is a dark blue color.",
+      "quality_score": 0.5,
       "prominent_subjects": [
-        "people",
-        "ending"
+        "white square",
+        "text 'Photo 10'"
       ],
-      "mood": "nostalgic",
-      "suggested_duration": 3.5
+      "mood": "neutral",
+      "suggested_duration": 2.0
     }
   ],
   "storyboard": {
     "scenes": [
       {
         "image_path": "photo01.jpg",
-        "duration": 3.5,
-        "caption": "The event begins",
+        "duration": 3.0,
+        "caption": "Introduction",
         "transition_in": "fade",
         "transition_out": "fade",
         "timing_offset": 0.0
       },
       {
         "image_path": "photo02.jpg",
-        "duration": 3.5,
-        "caption": "Attendees gather and socialize",
+        "duration": 3.0,
+        "caption": "Rising Action",
         "transition_in": "fade",
         "transition_out": "fade",
-        "timing_offset": 3.5
-      },
-      {
-        "image_path": "photo03.jpg",
-        "duration": 3.5,
-        "caption": "The event space comes alive",
-        "transition_in": "fade",
-        "transition_out": "fade",
-        "timing_offset": 7.0
-      },
-      {
-        "image_path": "photo04.jpg",
-        "duration": 3.5,
-        "caption": "A candid moment of joy",
-        "transition_in": "fade",
-        "transition_out": "fade",
-        "timing_offset": 10.5
+        "timing_offset": 3.0
       },
       {
         "image_path": "photo05.jpg",
-        "duration": 3.5,
-        "caption": "The highlight of the event",
+        "duration": 5.0,
+        "caption": "Climax",
         "transition_in": "fade",
         "transition_out": "fade",
-        "timing_offset": 14.0
+        "timing_offset": 6.0
       },
       {
-        "image_path": "photo06.jpg",
-        "duration": 3.5,
-        "caption": "An intimate moment shared",
+        "image_path": "photo04.jpg",
+        "duration": 2.0,
+        "caption": "Falling Action",
         "transition_in": "fade",
         "transition_out": "fade",
-        "timing_offset": 17.5
-      },
-      {
-        "image_path": "photo07.jpg",
-        "duration": 3.5,
-        "caption": "Attendees enjoy the event together",
-        "transition_in": "fade",
-        "transition_out": "fade",
-        "timing_offset": 21.0
-      },
-      {
-        "image_path": "photo08.jpg",
-        "duration": 3.5,
-        "caption": "A scenic overview of the location",
-        "transition_in": "fade",
-        "transition_out": "fade",
-        "timing_offset": 24.5
+        "timing_offset": 11.0
       },
       {
         "image_path": "photo09.jpg",
-        "duration": 3.5,
-        "caption": "A special moment between attendees",
+        "duration": 2.0,
+        "caption": "Resolution",
         "transition_in": "fade",
         "transition_out": "fade",
-        "timing_offset": 28.0
-      },
-      {
-        "image_path": "photo10.jpg",
-        "duration": 3.5,
-        "caption": "The event comes to a close",
-        "transition_in": "fade",
-        "transition_out": "fade",
-        "timing_offset": 31.5
+        "timing_offset": 13.0
       }
     ],
-    "total_duration": 35.0,
+    "total_duration": 18.0,
     "style": "cinematic",
     "music_suggestion": null
   },
