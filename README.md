@@ -31,12 +31,12 @@ graph TD
 
 ## Model Selection Rationale
 
-All models are hosted on **Groq Cloud** (groq.com) — chosen for its free developer tier, very low latency, and reliable structured-output support via `langchain-groq`.
+All models are hosted on **Groq Cloud** (groq.com) - chosen for its free developer tier, very low latency, and reliable structured-output support via `langchain-groq`.
 
 | Agent | Model | Reasoning |
 |-------|-------|-----------|
-| Intent Parser | `llama-3.3-70b-versatile` | Simple structured extraction from a one-line prompt — a general-purpose model is plenty, no need for a vision-capable or more expensive model |
-| Image Analyzer | `llama-4-scout-17b-16e-instruct` | Groq's currently supported multimodal model — needed specifically for real image understanding, unlike every other node |
+| Intent Parser | `llama-3.3-70b-versatile` | Simple structured extraction from a one-line prompt - a general-purpose model is plenty, no need for a vision-capable or more expensive model |
+| Image Analyzer | `llama-4-scout-17b-16e-instruct` | Groq's currently supported multimodal model - needed specifically for real image understanding, unlike every other node |
 | Storyboard Writer | `llama-3.3-70b-versatile` | Strong reasoning for narrative sequencing; this is the creative bottleneck of the pipeline |
 | Script Generator | `llama-3.3-70b-versatile` | Reliable code generation for Remotion TSX, guided by RAG-retrieved API examples |
 | Compiler & Fixer | `llama-3.3-70b-versatile` (via Script Generator regeneration) | Fixes are done by regenerating the script with the compiler error injected as context, rather than a separate patch step |
@@ -45,12 +45,12 @@ All models are hosted on **Groq Cloud** (groq.com) — chosen for its free devel
 
 ## RAG Design
 
-### Vector Store: ChromaDB (local, no API keys needed — uses Chroma's default local embedding model)
+### Vector Store: ChromaDB (local, no API keys needed - uses Chroma's default local embedding model)
 
 ### Collections
 
 1. **style_guides** - Visual treatment descriptions per video style
-   - Chunking: One document per style (semantic completeness — pacing, color, and tone need to be read together, not fragmented)
+   - Chunking: One document per style (semantic completeness - pacing, color, and tone need to be read together, not fragmented)
    - Metadata: `style`
 
 2. **remotion_api** - Remotion component usage examples and common error patterns
@@ -75,23 +75,18 @@ All models are hosted on **Groq Cloud** (groq.com) — chosen for its free devel
 ### Installation
 
 ```bash
-# Clone repository
 git clone https://github.com/Tech-wizard18/fotoowl-ai-pipeline.git
 cd fotoowl-ai-pipeline
 
-# Create virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install Python dependencies
 pip install -r requirements.txt
 
-# Install Remotion dependencies
 cd remotion
 npm install
 cd ..
 
-# Setup environment variables
 cp .env.example .env
 # Edit .env and add your GROQ_API_KEY
 ```
@@ -110,7 +105,7 @@ python main.py --images ./sample_images --prompt "Cinematic wedding reel, slow a
 pytest tests/ -v
 ```
 
-Tests run fully offline — every LLM call is mocked via `unittest.mock.patch`, no API key or flag required.
+Tests run fully offline - every LLM call is mocked via `unittest.mock.patch`, no API key or flag required.
 
 ## Sample Output
 
@@ -123,11 +118,8 @@ Check `output/` folder for:
 ## Known Limitations
 
 1. **Remotion Rendering**: Complex animations may fail on first compilation. The retry loop handles common errors but manual fixes might be needed for edge cases.
-
 2. **Image Quality**: Vision model analysis quality depends on image resolution and clarity.
-
 3. **Style Variety**: Limited to 4 pre-defined style guides. New styles need manual addition to the RAG store.
-
 4. **Image selection**: currently all analyzed images are passed to the Storyboard Writer, which selects a subset via the LLM call itself rather than a separate filtering step.
 
 ## Future Improvements
@@ -145,3 +137,9 @@ With more time, I would:
 ## License
 
 MIT
+
+## Author
+
+**Sanjog**
+
+Built as part of the FotoOwl AI Engineer Assignment using LangGraph, Groq, ChromaDB and Remotion.
