@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+
+# Chroma DB
+chroma_db/
+
+
+
+# Node.js
+node_modules/
+remotion/dist/
+remotion/node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/

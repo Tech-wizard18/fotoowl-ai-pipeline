@@ -1,0 +1,21 @@
+{
+  "name": "fotoowl-remotion",
+  "version": "1.0.0",
+  "description": "Remotion video composition for FotoOwl",
+  "scripts": {
+    "start": "remotion preview",
+    "build": "remotion render src/Composition.tsx FotoOwlReel output/reel.mp4"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.229",
+    "@remotion/bundler": "4.0.229",
+    "@remotion/cli": "4.0.229",
+    "@remotion/renderer": "4.0.229"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.3",
+    "typescript": "5.4.5"
+  }
+}

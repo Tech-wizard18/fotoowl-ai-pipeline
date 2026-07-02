@@ -1,0 +1,221 @@
+{
+  "user_prompt": "Cinematic documentary, slow paced, emotional, warm tones",
+  "image_folder": "sample_images",
+  "intent": {
+    "pacing": "slow",
+    "visual_style": "cinematic",
+    "caption_tone": "warm",
+    "transition_preference": "fade",
+    "emotion": "emotional"
+  },
+  "image_analyses": [
+    {
+      "image_path": "sample_images\\photo01.jpg",
+      "description": "Opening scene with vibrant atmosphere",
+      "quality_score": 0.85,
+      "prominent_subjects": [
+        "people",
+        "venue"
+      ],
+      "mood": "energetic",
+      "suggested_duration": 3.5
+    },
+    {
+      "image_path": "sample_images\\photo02.jpg",
+      "description": "Group of people gathered at the event",
+      "quality_score": 0.85,
+      "prominent_subjects": [
+        "people",
+        "group"
+      ],
+      "mood": "cheerful",
+      "suggested_duration": 3.5
+    },
+    {
+      "image_path": "sample_images\\photo03.jpg",
+      "description": "Wide shot of the event space",
+      "quality_score": 0.85,
+      "prominent_subjects": [
+        "venue",
+        "crowd"
+      ],
+      "mood": "lively",
+      "suggested_duration": 3.5
+    },
+    {
+      "image_path": "sample_images\\photo04.jpg",
+      "description": "Candid moment captured at the event",
+      "quality_score": 0.85,
+      "prominent_subjects": [
+        "people",
+        "moment"
+      ],
+      "mood": "joyful",
+      "suggested_duration": 3.5
+    },
+    {
+      "image_path": "sample_images\\photo05.jpg",
+      "description": "Highlight moment from the event",
+      "quality_score": 0.85,
+      "prominent_subjects": [
+        "people",
+        "action"
+      ],
+      "mood": "exciting",
+      "suggested_duration": 3.5
+    },
+    {
+      "image_path": "sample_images\\photo06.jpg",
+      "description": "Close-up detail shot from the event",
+      "quality_score": 0.85,
+      "prominent_subjects": [
+        "detail",
+        "texture"
+      ],
+      "mood": "intimate",
+      "suggested_duration": 3.5
+    },
+    {
+      "image_path": "sample_images\\photo07.jpg",
+      "description": "People enjoying the event together",
+      "quality_score": 0.85,
+      "prominent_subjects": [
+        "people",
+        "smiles"
+      ],
+      "mood": "happy",
+      "suggested_duration": 3.5
+    },
+    {
+      "image_path": "sample_images\\photo08.jpg",
+      "description": "Scenic overview of the event location",
+      "quality_score": 0.85,
+      "prominent_subjects": [
+        "venue",
+        "scenery"
+      ],
+      "mood": "calm",
+      "suggested_duration": 3.5
+    },
+    {
+      "image_path": "sample_images\\photo09.jpg",
+      "description": "Special moment shared between attendees",
+      "quality_score": 0.85,
+      "prominent_subjects": [
+        "people",
+        "connection"
+      ],
+      "mood": "warm",
+      "suggested_duration": 3.5
+    },
+    {
+      "image_path": "sample_images\\photo10.jpg",
+      "description": "Closing scene of the event",
+      "quality_score": 0.85,
+      "prominent_subjects": [
+        "people",
+        "ending"
+      ],
+      "mood": "nostalgic",
+      "suggested_duration": 3.5
+    }
+  ],
+  "storyboard": {
+    "scenes": [
+      {
+        "image_path": "photo01.jpg",
+        "duration": 3.5,
+        "caption": "The event begins",
+        "transition_in": "fade",
+        "transition_out": "fade",
+        "timing_offset": 0.0
+      },
+      {
+        "image_path": "photo02.jpg",
+        "duration": 3.5,
+        "caption": "Attendees gather and socialize",
+        "transition_in": "fade",
+        "transition_out": "fade",
+        "timing_offset": 3.5
+      },
+      {
+        "image_path": "photo03.jpg",
+        "duration": 3.5,
+        "caption": "The event space comes alive",
+        "transition_in": "fade",
+        "transition_out": "fade",
+        "timing_offset": 7.0
+      },
+      {
+        "image_path": "photo04.jpg",
+        "duration": 3.5,
+        "caption": "A candid moment of joy",
+        "transition_in": "fade",
+        "transition_out": "fade",
+        "timing_offset": 10.5
+      },
+      {
+        "image_path": "photo05.jpg",
+        "duration": 3.5,
+        "caption": "The highlight of the event",
+        "transition_in": "fade",
+        "transition_out": "fade",
+        "timing_offset": 14.0
+      },
+      {
+        "image_path": "photo06.jpg",
+        "duration": 3.5,
+        "caption": "An intimate moment shared",
+        "transition_in": "fade",
+        "transition_out": "fade",
+        "timing_offset": 17.5
+      },
+      {
+        "image_path": "photo07.jpg",
+        "duration": 3.5,
+        "caption": "Attendees enjoy the event together",
+        "transition_in": "fade",
+        "transition_out": "fade",
+        "timing_offset": 21.0
+      },
+      {
+        "image_path": "photo08.jpg",
+        "duration": 3.5,
+        "caption": "A scenic overview of the location",
+        "transition_in": "fade",
+        "transition_out": "fade",
+        "timing_offset": 24.5
+      },
+      {
+        "image_path": "photo09.jpg",
+        "duration": 3.5,
+        "caption": "A special moment between attendees",
+        "transition_in": "fade",
+        "transition_out": "fade",
+        "timing_offset": 28.0
+      },
+      {
+        "image_path": "photo10.jpg",
+        "duration": 3.5,
+        "caption": "The event comes to a close",
+        "transition_in": "fade",
+        "transition_out": "fade",
+        "timing_offset": 31.5
+      }
+    ],
+    "total_duration": 35.0,
+    "style": "cinematic",
+    "music_suggestion": null
+  },
+  "compilation_result": {
+    "success": true,
+    "error_message": null,
+    "error_line": null,
+    "suggestions": []
+  },
+  "retry_count": 0,
+  "max_retries": 3,
+  "render_output_path": "D:\\fotoowl-pipeline\\output\\reel.mp4",
+  "status": "rendered",
+  "error": null
+}
