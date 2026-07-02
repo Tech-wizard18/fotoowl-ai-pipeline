@@ -1,47 +1,47 @@
 {
   "scenes": [
     {
-      "image_path": "photo01.jpg",
-      "duration": 3.0,
-      "caption": "Introduction",
+      "image_path": "_ASL9923.jpg",
+      "duration": 5.0,
+      "caption": "The couple's special day begins",
       "transition_in": "fade",
       "transition_out": "fade",
       "timing_offset": 0.0
     },
     {
-      "image_path": "photo02.jpg",
-      "duration": 3.0,
-      "caption": "Rising Action",
-      "transition_in": "fade",
-      "transition_out": "fade",
-      "timing_offset": 3.0
-    },
-    {
-      "image_path": "photo05.jpg",
+      "image_path": "_ASL9969.jpg",
       "duration": 5.0,
-      "caption": "Climax",
+      "caption": "Love is in the air",
       "transition_in": "fade",
       "transition_out": "fade",
-      "timing_offset": 6.0
+      "timing_offset": 5.0
     },
     {
-      "image_path": "photo04.jpg",
-      "duration": 2.0,
-      "caption": "Falling Action",
+      "image_path": "_ASL9971.jpg",
+      "duration": 5.0,
+      "caption": "Cherishing the moment",
       "transition_in": "fade",
       "transition_out": "fade",
-      "timing_offset": 11.0
+      "timing_offset": 10.0
     },
     {
-      "image_path": "photo09.jpg",
-      "duration": 2.0,
-      "caption": "Resolution",
+      "image_path": "_ASL9984.jpg",
+      "duration": 3.0,
+      "caption": "Together forever",
       "transition_in": "fade",
       "transition_out": "fade",
-      "timing_offset": 13.0
+      "timing_offset": 15.0
+    },
+    {
+      "image_path": "_ASL9995.jpg",
+      "duration": 3.0,
+      "caption": "Happiness abounds",
+      "transition_in": "fade",
+      "transition_out": "fade",
+      "timing_offset": 18.0
     }
   ],
-  "total_duration": 18.0,
+  "total_duration": 26.0,
   "style": "cinematic",
   "music_suggestion": null
 }

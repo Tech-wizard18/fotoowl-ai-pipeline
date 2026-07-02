@@ -1,173 +1,173 @@
 {
-  "user_prompt": "Cinematic documentary, slow paced, emotional, warm tones",
-  "image_folder": "sample_images",
+  "user_prompt": "Cinematic wedding reel, slow and emotional, warm tones, minimal text",
+  "image_folder": "event_photos",
   "intent": {
     "pacing": "slow",
     "visual_style": "cinematic",
-    "caption_tone": "emotional",
+    "caption_tone": "minimal",
     "transition_preference": "fade",
-    "emotion": "warm"
+    "emotion": "emotional"
   },
   "image_analyses": [
     {
-      "image_path": "sample_images\\photo01.jpg",
-      "description": "The image shows a white rectangle on a blue background with the text 'Photo 1' in the center of the rectangle and 'FotoOwl AI Sample' at the top center of the image.",
-      "quality_score": 0.5,
+      "image_path": "event_photos\\_ASL9923.jpg",
+      "description": "The image shows a couple in traditional Indian wedding attire standing together in a natural setting.",
+      "quality_score": 0.9,
       "prominent_subjects": [
-        "white rectangle",
-        "blue background"
+        "couple",
+        "traditional Indian wedding attire"
       ],
-      "mood": "neutral",
-      "suggested_duration": 3.0
-    },
-    {
-      "image_path": "sample_images\\photo02.jpg",
-      "description": "The image shows a white rectangle with the text 'Photo 2' on a purple background.",
-      "quality_score": 0.5,
-      "prominent_subjects": [
-        "white rectangle",
-        "text"
-      ],
-      "mood": "neutral",
-      "suggested_duration": 3.0
-    },
-    {
-      "image_path": "sample_images\\photo03.jpg",
-      "description": "The image shows a green background with a white rectangle in the center. Inside the rectangle, there is a small text that says 'Photo 3'. At the top of the image, there is a small text that says 'FotoOwl AI Sample'.",
-      "quality_score": 0.8,
-      "prominent_subjects": [
-        "white rectangle",
-        "green background",
-        "text"
-      ],
-      "mood": "neutral",
-      "suggested_duration": 2.0
-    },
-    {
-      "image_path": "sample_images\\photo04.jpg",
-      "description": "The image shows a white rectangle with the text 'Photo 4' in the center, set against a yellow-orange background.",
-      "quality_score": 0.8,
-      "prominent_subjects": [
-        "white rectangle",
-        "text 'Photo 4'"
-      ],
-      "mood": "neutral",
-      "suggested_duration": 2.0
-    },
-    {
-      "image_path": "sample_images\\photo05.jpg",
-      "description": "The image shows a white rectangle with the text 'Photo 5' in the center, set against a red background with the text 'FotoOwl AI Sample' at the top. The overall composition is simple and clean.",
-      "quality_score": 0.8,
-      "prominent_subjects": [
-        "white rectangle",
-        "text 'Photo 5'",
-        "red background",
-        "text 'FotoOwl AI Sample'"
-      ],
-      "mood": "neutral",
+      "mood": "joyful",
       "suggested_duration": 5.0
     },
     {
-      "image_path": "sample_images\\photo06.jpg",
-      "description": "The image shows a white rectangle on a blue background with some text.",
-      "quality_score": 0.5,
+      "image_path": "event_photos\\_ASL9969.jpg",
+      "description": "The image shows a couple in traditional Indian wedding attire, with the man wearing a white sherwani and turban, and the woman wearing a pink and white lehenga. They are standing in a forest or wooded area, with the man embracing the woman from behind.",
+      "quality_score": 0.9,
       "prominent_subjects": [
-        "white rectangle",
-        "blue background",
-        "text"
+        "couple",
+        "traditional Indian wedding attire",
+        "forest or wooded area"
       ],
-      "mood": "neutral",
-      "suggested_duration": 2.0
+      "mood": "romantic",
+      "suggested_duration": 5.0
     },
     {
-      "image_path": "sample_images\\photo07.jpg",
-      "description": "The image shows a white rectangle with the text 'Photo 7' on a purple background.",
-      "quality_score": 0.5,
+      "image_path": "event_photos\\_ASL9971.jpg",
+      "description": "The image shows a couple in traditional Indian wedding attire, with the man wearing a white sherwani and the woman in a beautiful lehenga. They are standing in a natural setting with trees in the background.",
+      "quality_score": 0.9,
       "prominent_subjects": [
-        "white rectangle",
-        "text 'Photo 7'"
+        "couple",
+        "traditional Indian wedding attire"
       ],
-      "mood": "neutral",
-      "suggested_duration": 2.0
+      "mood": "romantic",
+      "suggested_duration": 5.0
     },
     {
-      "image_path": "sample_images\\photo08.jpg",
-      "description": "The image shows a white rectangle with the text 'Photo8' on a green background.",
-      "quality_score": 0.5,
+      "image_path": "event_photos\\_ASL9976.jpg",
+      "description": "A photo of a couple in traditional Indian wedding attire, with the man wearing a white sherwani and turban, and the woman wearing a white and pink lehenga with intricate embroidery and jewelry.",
+      "quality_score": 0.9,
       "prominent_subjects": [
-        "white rectangle",
-        "green background"
+        "couple",
+        "traditional Indian wedding attire",
+        "man",
+        "woman"
       ],
-      "mood": "neutral",
-      "suggested_duration": 2.0
+      "mood": "romantic",
+      "suggested_duration": 5.0
     },
     {
-      "image_path": "sample_images\\photo09.jpg",
-      "description": "The image shows a white rectangle with the text 'Photo 9' on an orange background.",
-      "quality_score": 0.8,
+      "image_path": "event_photos\\_ASL9984.jpg",
+      "description": "The image shows a couple in traditional Indian wedding attire, with the man wearing a white sherwani and turban, and the woman wearing a pink and white lehenga. They are sitting together, with their heads close.",
+      "quality_score": 0.9,
       "prominent_subjects": [
-        "white rectangle",
-        "orange background"
+        "couple",
+        "traditional Indian wedding attire"
       ],
-      "mood": "neutral",
-      "suggested_duration": 2.0
+      "mood": "romantic",
+      "suggested_duration": 3.0
     },
     {
-      "image_path": "sample_images\\photo10.jpg",
-      "description": "The image appears to be a placeholder or a template with a white square in the center, containing the text 'Photo 10'. The background is a dark blue color.",
-      "quality_score": 0.5,
+      "image_path": "event_photos\\_ASL9995.jpg",
+      "description": "The image shows a close-up of a smiling Indian couple in traditional wedding attire.",
+      "quality_score": 0.9,
       "prominent_subjects": [
-        "white square",
-        "text 'Photo 10'"
+        "Indian couple",
+        "traditional wedding attire"
       ],
-      "mood": "neutral",
-      "suggested_duration": 2.0
+      "mood": "happy",
+      "suggested_duration": 3.0
+    },
+    {
+      "image_path": "event_photos\\AHD_6008.jpg",
+      "description": "The image shows a woman in traditional Indian attire, likely a bride, sitting on a chair. She wears a vibrant pink and gold sari with green accents, adorned with extensive gold jewelry including a headpiece, earrings, necklaces, and bangles. Her dark hair is styled in an elegant updo, and her makeup is bold, featuring dark eyeliner and a red bindi on her forehead. The background is blurred, focusing attention on the subject.",
+      "quality_score": 0.9,
+      "prominent_subjects": [
+        "woman",
+        "sari",
+        "jewelry"
+      ],
+      "mood": "joyful",
+      "suggested_duration": 5.0
+    },
+    {
+      "image_path": "event_photos\\AHD_6020.jpg",
+      "description": "A man in traditional Indian attire is applying a decorative headpiece to a woman's forehead while she smiles. They are seated on an ornate chair with a table in front of them holding various items. The scene appears to be a wedding or cultural ceremony.",
+      "quality_score": 0.9,
+      "prominent_subjects": [
+        "man",
+        "woman"
+      ],
+      "mood": "joyful",
+      "suggested_duration": 5.0
+    },
+    {
+      "image_path": "event_photos\\AHD_6024.jpg",
+      "description": "The image shows a man and woman in traditional Indian attire, likely during a wedding ceremony. The woman is wearing a red sari with gold accents, while the man is dressed in a white shirt and pink pants with a matching turban. They are seated on a couch with a table in front of them adorned with flowers and other items.",
+      "quality_score": 0.9,
+      "prominent_subjects": [
+        "man",
+        "woman"
+      ],
+      "mood": "joyful",
+      "suggested_duration": 3.0
+    },
+    {
+      "image_path": "event_photos\\AHD_6052.jpg",
+      "description": "The image shows a man and woman in traditional Indian wedding attire. The woman is wearing a red sari with gold accents, while the man is dressed in a white shirt and red pants with a matching hat. They are sitting on a couch, with the man feeding the woman a piece of food.",
+      "quality_score": 0.9,
+      "prominent_subjects": [
+        "man",
+        "woman"
+      ],
+      "mood": "happy",
+      "suggested_duration": 3.0
     }
   ],
   "storyboard": {
     "scenes": [
       {
-        "image_path": "photo01.jpg",
-        "duration": 3.0,
-        "caption": "Introduction",
+        "image_path": "_ASL9923.jpg",
+        "duration": 5.0,
+        "caption": "The couple's special day begins",
         "transition_in": "fade",
         "transition_out": "fade",
         "timing_offset": 0.0
       },
       {
-        "image_path": "photo02.jpg",
-        "duration": 3.0,
-        "caption": "Rising Action",
-        "transition_in": "fade",
-        "transition_out": "fade",
-        "timing_offset": 3.0
-      },
-      {
-        "image_path": "photo05.jpg",
+        "image_path": "_ASL9969.jpg",
         "duration": 5.0,
-        "caption": "Climax",
+        "caption": "Love is in the air",
         "transition_in": "fade",
         "transition_out": "fade",
-        "timing_offset": 6.0
+        "timing_offset": 5.0
       },
       {
-        "image_path": "photo04.jpg",
-        "duration": 2.0,
-        "caption": "Falling Action",
+        "image_path": "_ASL9971.jpg",
+        "duration": 5.0,
+        "caption": "Cherishing the moment",
         "transition_in": "fade",
         "transition_out": "fade",
-        "timing_offset": 11.0
+        "timing_offset": 10.0
       },
       {
-        "image_path": "photo09.jpg",
-        "duration": 2.0,
-        "caption": "Resolution",
+        "image_path": "_ASL9984.jpg",
+        "duration": 3.0,
+        "caption": "Together forever",
         "transition_in": "fade",
         "transition_out": "fade",
-        "timing_offset": 13.0
+        "timing_offset": 15.0
+      },
+      {
+        "image_path": "_ASL9995.jpg",
+        "duration": 3.0,
+        "caption": "Happiness abounds",
+        "transition_in": "fade",
+        "transition_out": "fade",
+        "timing_offset": 18.0
       }
     ],
-    "total_duration": 18.0,
+    "total_duration": 26.0,
     "style": "cinematic",
     "music_suggestion": null
   },
@@ -177,7 +177,7 @@
     "error_line": null,
     "suggestions": []
   },
-  "retry_count": 0,
+  "retry_count": 1,
   "max_retries": 3,
   "render_output_path": "D:\\fotoowl-pipeline\\output\\reel.mp4",
   "status": "rendered",
