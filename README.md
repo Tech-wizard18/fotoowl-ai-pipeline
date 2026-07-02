@@ -1,149 +1,323 @@
-# FotoOwl AI - Image-to-Video Multiagent Pipeline
+# 🦉 FotoOwl AI – Image-to-Video Multi-Agent Pipeline
 
 ## Overview
 
-A LangGraph-powered multiagent system that transforms event photos into personalized video reels using AI. The pipeline analyzes images, creates storyboards, generates Remotion scripts, and renders videos automatically.
+FotoOwl AI is a LangGraph-powered multi-agent system that transforms a collection of event photos into a cinematic video reel.
 
-## Architecture
+The pipeline intelligently analyzes uploaded images, understands the user's creative prompt, generates a storyboard, produces a Remotion video composition, automatically fixes compilation errors, and finally renders the finished MP4 video.
 
-### LangGraph Flow
+### Features
+
+- 🤖 LangGraph-based multi-agent workflow
+- 🧠 AI-powered intent parsing and storyboard generation using Groq LLM
+- 🖼️ Image analysis with a vision-capable AI model
+- 📚 RAG-powered retrieval using ChromaDB
+- 🎬 Automatic Remotion TypeScript generation
+- 🔄 Automatic compile-and-fix retry loop
+- 🎥 Automatic MP4 video rendering
+- 🧪 Unit tests for pipeline components
+
+---
+
+# Architecture
+
+## LangGraph Workflow
 
 ```mermaid
 graph TD
     A[Start] --> B[Parse Intent]
-    B --> C[Image Analyzer]
-    C --> D[Storyboard Writer]
-    D --> E[Script Generator]
-    E --> F[Compiler & Fixer]
-    F -->|Success| G[Renderer]
-    F -->|Error & Retries < 3| E
-    F -->|Max Retries| H[Exit with Error]
-    G --> I[End]
+    B --> C[Analyze Images]
+    C --> D[Write Storyboard]
+    D --> E[Generate Remotion Script]
+    E --> F[Compile & Auto Fix]
+    F -->|Success| G[Render Video]
+    F -->|Compilation Error| E
+    F -->|3 Failed Attempts| H[Pipeline Failed]
+    G --> I[Finish]
 ```
 
-### Five Agents
+---
 
-1. **Image Analyzer** - Analyzes images using vision model (GPT-4o-mini)
-2. **Storyboard Writer** - Creates structured storyboard with RAG-retrieved style guides
-3. **Script Generator** - Generates Remotion TypeScript code with RAG-retrieved API docs
-4. **Compiler & Fixer** - Compiles script and fixes errors with retry loop (max 3 attempts)
-5. **Renderer** - Triggers final video render
+# Multi-Agent Architecture
 
-## Model Selection Rationale
+The pipeline consists of five AI agents.
 
-All models use **Google Gemini** (free tier via [Google AI Studio](https://aistudio.google.com/apikey)).
+### 1. Intent Parser
 
-| Agent | Model | Reasoning |
-|-------|-------|-----------|
-| Intent Parser | gemini-2.0-flash | Fast, cheap, structured output — simple parsing task |
-| Image Analyzer | gemini-2.0-flash | Native multimodal vision, free, handles 10 images well |
-| Storyboard Writer | gemini-2.0-flash | Strong reasoning for narrative sequencing |
-| Script Generator | gemini-2.0-flash | Good code generation, handles Remotion TSX reliably |
-| Compiler & Fixer | gemini-2.0-flash | Error pattern matching, targeted fix with RAG context |
+- Extracts style, pacing and tone from the user prompt.
+- Produces structured metadata for downstream agents.
 
-> `gemini-2.0-flash` is used for all nodes: it's free (1500 req/day), fast, supports vision, and handles structured output. Upgrade individual nodes to `gemini-1.5-pro` for higher quality at the cost of slower responses.
+### 2. Image Analyzer
 
-## RAG Design
+- Understands uploaded images using a vision-capable AI model.
+- Identifies scenes, objects and visual context.
 
-### Vector Store: Chroma (local, no API keys needed)
+### 3. Storyboard Writer
 
-### Collections
+- Generates a complete video storyboard.
+- Uses RAG to retrieve relevant cinematic style guides.
 
-1. **style_guides** - Visual treatment descriptions per video style
-   - Chunking: One document per style (semantic completeness)
-   - Metadata: style_name, pacing, tone
-   
-2. **remotion_api** - Remotion component usage examples
-   - Chunking: One function/component per document
-   - Metadata: component_name, category, use_case
+### 4. Script Generator
 
-### Retrieval Strategy
+- Converts the storyboard into a Remotion TypeScript composition.
+- Uses RAG to retrieve Remotion API examples.
 
-- Storyboard Writer: Retrieve top-2 style guides matching intent
-- Script Generator: Retrieve top-5 API snippets for components needed
-- Compiler & Fixer: Retrieve top-3 API snippets matching error keywords
+### 5. Compiler & Renderer
 
-## Setup
+- Compiles the generated Remotion code.
+- Automatically fixes common compilation errors.
+- Retries up to 3 times.
+- Renders the final MP4 video.
 
-### Prerequisites
+---
 
-- Python 3.11+
-- Node.js 18+ (for Remotion)
-- Git
+# AI Model Selection
 
-### Installation
+This project uses **Groq Cloud** for low-latency LLM inference.
+
+Groq was selected because it provides:
+
+- Very fast inference
+- Reliable structured outputs
+- Low latency
+- Excellent code generation
+- Strong reasoning capabilities
+- Free developer tier suitable for this assignment
+
+The same Groq model is used across all pipeline agents for consistency and reduced complexity.
+
+---
+
+# RAG Design
+
+## Vector Database
+
+**ChromaDB**
+
+Local vector database used to provide contextual information to AI agents.
+
+## Collections
+
+### style_guides
+
+Stores cinematic style descriptions.
+
+Metadata:
+
+- style
+- pacing
+- tone
+
+Used by:
+
+- Storyboard Writer
+
+---
+
+### remotion_api
+
+Stores Remotion API examples.
+
+Metadata:
+
+- component
+- category
+- usage
+
+Used by:
+
+- Script Generator
+- Compiler & Fixer
+
+---
+
+## Retrieval Strategy
+
+### Storyboard Agent
+
+Retrieves:
+
+- Top 2 matching style guides
+
+### Script Generator
+
+Retrieves:
+
+- Top 5 relevant Remotion API examples
+
+### Compiler & Fixer
+
+Retrieves:
+
+- Top 3 API snippets related to the compilation error
+
+---
+
+# Tech Stack
+
+- Python 3.11
+- LangGraph
+- LangChain
+- Groq API
+- ChromaDB
+- Remotion
+- React
+- TypeScript
+- FFmpeg
+- Pytest
+
+---
+
+# Project Structure
+
+```
+fotoowl-pipeline/
+│
+├── src/
+├── remotion/
+├── sample_images/
+├── output/
+├── tests/
+├── requirements.txt
+├── main.py
+├── README.md
+└── QUICKSTART.md
+```
+
+---
+
+# Installation
+
+## Clone Repository
 
 ```bash
-# Clone repository
-git clone <your-repo-url>
-cd fotoowl-pipeline
+git clone https://github.com/Tech-wizard18/fotoowl-ai-pipeline.git
+cd fotoowl-ai-pipeline
+```
 
-# Create virtual environment
+## Create Virtual Environment
+
+```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-# Install Python dependencies
+Windows
+
+```bash
+venv\Scripts\activate
+```
+
+Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+## Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-# Install Remotion dependencies
+Install Remotion dependencies
+
+```bash
 cd remotion
 npm install
 cd ..
-
-# Setup environment variables
-cp .env.example .env
-# Edit .env and add your OPENAI_API_KEY
 ```
 
-## Usage
+---
 
-### Run Pipeline
+# Environment Variables
+
+Create a `.env` file.
+
+Example:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+```
+
+---
+
+# Running the Pipeline
 
 ```bash
-python main.py --images ./sample_images --prompt "Cinematic wedding reel, slow and emotional, warm tones, minimal text"
+python main.py --images sample_images --prompt "Cinematic documentary, slow paced, emotional, warm tones"
 ```
 
-### Run Tests
+Example Output
+
+```
+🦉 FotoOwl AI Pipeline starting...
+
+✓ Intent Parsed
+✓ Images Analyzed
+✓ Storyboard Generated
+✓ Script Generated
+✓ Compilation Successful
+✓ Video Rendered
+
+Video saved to:
+
+output/reel.mp4
+```
+
+---
+
+# Running Tests
 
 ```bash
 pytest tests/ -v
 ```
 
-### Test Without API Keys
+---
 
-```bash
-pytest tests/ -v --mock-llm
-```
+# Sample Output
 
-## Sample Output
+The generated output is stored in the `output/` directory.
 
-Check `output/` folder for:
-- `storyboard.json` - Structured storyboard with timing and captions
-- `composition.tsx` - Generated Remotion script
-- `pipeline_state.json` - Full execution trace
-- `video.mp4` - Rendered video (if successful)
+Files include:
 
-## Known Limitations
+- storyboard.json
+- composition.tsx
+- pipeline_state.json
+- reel.mp4
 
-1. **Remotion Rendering**: Complex animations may fail on first compilation. The retry loop handles common errors but manual fixes might be needed for edge cases.
+---
 
-2. **Image Quality**: Vision model analysis quality depends on image resolution and clarity.
+# Current Limitations
 
-3. **Style Variety**: Limited to pre-defined style guides. New styles need manual addition to RAG store.
+- Image quality directly affects storyboard quality.
+- Style guides are currently predefined.
+- Retry mechanism handles common compilation issues only.
+- Requires a valid Groq API key.
+- Rendering speed depends on local hardware.
 
-4. **Cost**: Using GPT-4o for creative tasks costs ~$0.50-1.00 per run with 10 images.
+---
 
-## Future Improvements
+# Future Improvements
 
-With more time, I would:
+- Background music generation
+- Voice-over generation
+- Face-aware smart framing
+- Automatic transition selection
+- Brand templates
+- Multi-language captions
+- Web interface
+- Cloud deployment
 
-- Add music synchronization using tempo detection
-- Implement face detection for better framing
-- Support custom brand templates and themes
-- Add video export format options (vertical/square/horizontal)
-- Build caching layer for repeated image analysis
-- Add streaming progress updates
+---
 
-## License
+# License
 
-MIT
+MIT License
+
+---
+
+# Author
+
+**Sanjog**
+
+Built as part of the **FotoOwl AI Engineer Assignment** using LangGraph, Groq, ChromaDB and Remotion.
