@@ -2,46 +2,86 @@
   "scenes": [
     {
       "image_path": "_ASL9923.jpg",
-      "duration": 5.0,
-      "caption": "The couple's special day begins",
-      "transition_in": "fade",
-      "transition_out": "fade",
+      "duration": 1.0,
+      "caption": "THEY LIVED HAPPILY EVER AFTER!",
+      "transition_in": "cut",
+      "transition_out": "cut",
       "timing_offset": 0.0
     },
     {
       "image_path": "_ASL9969.jpg",
-      "duration": 5.0,
-      "caption": "Love is in the air",
-      "transition_in": "fade",
-      "transition_out": "fade",
-      "timing_offset": 5.0
+      "duration": 1.0,
+      "caption": "TOGETHER FOREVER!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 1.0
     },
     {
       "image_path": "_ASL9971.jpg",
-      "duration": 5.0,
-      "caption": "Cherishing the moment",
-      "transition_in": "fade",
-      "transition_out": "fade",
-      "timing_offset": 10.0
+      "duration": 1.0,
+      "caption": "WITH LOVE AND DEVOTION!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 2.0
+    },
+    {
+      "image_path": "_ASL9976.jpg",
+      "duration": 1.0,
+      "caption": "THEIR LOVE STORY!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 3.0
     },
     {
       "image_path": "_ASL9984.jpg",
-      "duration": 3.0,
-      "caption": "Together forever",
-      "transition_in": "fade",
-      "transition_out": "fade",
-      "timing_offset": 15.0
+      "duration": 1.0,
+      "caption": "A LOVE THAT LASTS!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 4.0
     },
     {
       "image_path": "_ASL9995.jpg",
-      "duration": 3.0,
-      "caption": "Happiness abounds",
-      "transition_in": "fade",
-      "transition_out": "fade",
-      "timing_offset": 18.0
+      "duration": 1.0,
+      "caption": "HAPPILY EVER AFTER!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 5.0
+    },
+    {
+      "image_path": "AHD_6008.jpg",
+      "duration": 1.0,
+      "caption": "THE BRIDE PREPARES!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 6.0
+    },
+    {
+      "image_path": "AHD_6020.jpg",
+      "duration": 1.0,
+      "caption": "THE GROOM PREPARES!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 7.0
+    },
+    {
+      "image_path": "AHD_6024.jpg",
+      "duration": 1.0,
+      "caption": "THE CEREMONY!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 8.0
+    },
+    {
+      "image_path": "AHD_6052.jpg",
+      "duration": 1.0,
+      "caption": "THE FEAST!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 9.0
     }
   ],
-  "total_duration": 26.0,
-  "style": "cinematic",
+  "total_duration": 10.0,
+  "style": "upbeat",
   "music_suggestion": null
 }

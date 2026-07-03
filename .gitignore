@@ -38,3 +38,6 @@ remotion/node_modules/
 htmlcov/
 
 .chroma/
+
+echo "output/" >> .gitignore
+echo ".chroma/" >> .gitignore

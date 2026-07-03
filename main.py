@@ -14,12 +14,12 @@ from src.rag import RAGStore
 
 def run_pipeline(image_folder: str, user_prompt: str) -> dict:
     """Run the full pipeline and return final state."""
-    print("🦉 FotoOwl AI Pipeline starting...")
+    print(" FotoOwl AI Pipeline starting...")
     print(f"   Images: {image_folder}")
     print(f"   Prompt: {user_prompt}\n")
 
     # Init RAG
-    print("📚 Initializing RAG store...")
+    print(" Initializing RAG store...")
     rag = RAGStore()
     rag.initialize()
 
@@ -65,20 +65,20 @@ def run_pipeline(image_folder: str, user_prompt: str) -> dict:
             sb_path = f"{config.OUTPUT_DIR}/storyboard.json"
             with open(sb_path, "w") as f:
                 json.dump(final_state["storyboard"], f, indent=2)
-            print(f"\n📋 Storyboard saved → {sb_path}")
+            print(f"\n Storyboard saved → {sb_path}")
 
         # Save script
         if final_state.get("script_code"):
             sc_path = f"{config.OUTPUT_DIR}/composition.tsx"
             with open(sc_path, "w") as f:
                 f.write(final_state["script_code"])
-            print(f"📝 Script saved     → {sc_path}")
+            print(f" Script saved     → {sc_path}")
 
-        print(f"📊 Pipeline state   → {state_path}")
+        print(f" Pipeline state   → {state_path}")
 
         status = final_state.get("status")
         if status == "rendered":
-            print(f"\n🎬 Video rendered   → {final_state.get('render_output_path')}")
+            print(f"\n Video rendered   → {final_state.get('render_output_path')}")
         elif status == "render_failed":
             print(f"\n⚠  Render failed: {final_state.get('error')}")
             print("   Script and storyboard saved for review.")

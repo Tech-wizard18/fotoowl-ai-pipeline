@@ -1,36 +1,35 @@
 {
-  "user_prompt": "Cinematic wedding reel, slow and emotional, warm tones, minimal text",
+  "user_prompt": "Upbeat celebration, fast energetic cuts, joyful mood",
   "image_folder": "event_photos",
   "intent": {
-    "pacing": "slow",
-    "visual_style": "cinematic",
-    "caption_tone": "minimal",
-    "transition_preference": "fade",
-    "emotion": "emotional"
+    "pacing": "fast",
+    "visual_style": "upbeat",
+    "caption_tone": "energetic",
+    "transition_preference": "cut",
+    "emotion": "joyful"
   },
   "image_analyses": [
     {
       "image_path": "event_photos\\_ASL9923.jpg",
-      "description": "The image shows a couple in traditional Indian wedding attire standing together in a natural setting.",
+      "description": "The image shows a couple in traditional Indian wedding attire standing together outdoors.",
+      "quality_score": 0.9,
+      "prominent_subjects": [
+        "man",
+        "woman"
+      ],
+      "mood": "happy",
+      "suggested_duration": 3.0
+    },
+    {
+      "image_path": "event_photos\\_ASL9969.jpg",
+      "description": "A couple in traditional Indian wedding attire, with the man wearing a white sherwani and turban, and the woman in a pink and white lehenga, standing together in a forest setting.",
       "quality_score": 0.9,
       "prominent_subjects": [
         "couple",
         "traditional Indian wedding attire"
       ],
-      "mood": "joyful",
-      "suggested_duration": 5.0
-    },
-    {
-      "image_path": "event_photos\\_ASL9969.jpg",
-      "description": "The image shows a couple in traditional Indian wedding attire, with the man wearing a white sherwani and turban, and the woman wearing a pink and white lehenga. They are standing in a forest or wooded area, with the man embracing the woman from behind.",
-      "quality_score": 0.9,
-      "prominent_subjects": [
-        "couple",
-        "traditional Indian wedding attire",
-        "forest or wooded area"
-      ],
       "mood": "romantic",
-      "suggested_duration": 5.0
+      "suggested_duration": 3.0
     },
     {
       "image_path": "event_photos\\_ASL9971.jpg",
@@ -41,7 +40,7 @@
         "traditional Indian wedding attire"
       ],
       "mood": "romantic",
-      "suggested_duration": 5.0
+      "suggested_duration": 3.0
     },
     {
       "image_path": "event_photos\\_ASL9976.jpg",
@@ -54,7 +53,7 @@
         "woman"
       ],
       "mood": "romantic",
-      "suggested_duration": 5.0
+      "suggested_duration": 3.0
     },
     {
       "image_path": "event_photos\\_ASL9984.jpg",
@@ -69,41 +68,43 @@
     },
     {
       "image_path": "event_photos\\_ASL9995.jpg",
-      "description": "The image shows a close-up of a smiling Indian couple in traditional wedding attire.",
+      "description": "A photo of a couple in traditional Indian wedding attire, with the man wearing a white sherwani and turban, and the woman wearing a white and gold sari with intricate embroidery.",
       "quality_score": 0.9,
       "prominent_subjects": [
-        "Indian couple",
-        "traditional wedding attire"
+        "couple",
+        "traditional Indian wedding attire",
+        "man",
+        "woman"
       ],
       "mood": "happy",
       "suggested_duration": 3.0
     },
     {
       "image_path": "event_photos\\AHD_6008.jpg",
-      "description": "The image shows a woman in traditional Indian attire, likely a bride, sitting on a chair. She wears a vibrant pink and gold sari with green accents, adorned with extensive gold jewelry including a headpiece, earrings, necklaces, and bangles. Her dark hair is styled in an elegant updo, and her makeup is bold, featuring dark eyeliner and a red bindi on her forehead. The background is blurred, focusing attention on the subject.",
+      "description": "The image shows a woman in traditional Indian attire, likely a bride, sitting and looking down. She wears a red and gold sari with green accents, adorned with gold jewelry including a headpiece, earrings, necklace, and nose ring. Her dark hair is styled up with a gold hairpiece. The background is blurred, showing a grassy area and a white surface.",
       "quality_score": 0.9,
       "prominent_subjects": [
         "woman",
-        "sari",
+        "traditional Indian attire",
         "jewelry"
       ],
       "mood": "joyful",
-      "suggested_duration": 5.0
+      "suggested_duration": 3.0
     },
     {
       "image_path": "event_photos\\AHD_6020.jpg",
-      "description": "A man in traditional Indian attire is applying a decorative headpiece to a woman's forehead while she smiles. They are seated on an ornate chair with a table in front of them holding various items. The scene appears to be a wedding or cultural ceremony.",
+      "description": "A man in traditional Indian attire placing a decorative headpiece on a woman's forehead while she smiles, seated on an ornate chair with a table of offerings in front of them.",
       "quality_score": 0.9,
       "prominent_subjects": [
         "man",
         "woman"
       ],
       "mood": "joyful",
-      "suggested_duration": 5.0
+      "suggested_duration": 3.0
     },
     {
       "image_path": "event_photos\\AHD_6024.jpg",
-      "description": "The image shows a man and woman in traditional Indian attire, likely during a wedding ceremony. The woman is wearing a red sari with gold accents, while the man is dressed in a white shirt and pink pants with a matching turban. They are seated on a couch with a table in front of them adorned with flowers and other items.",
+      "description": "The image shows a man and woman in traditional Indian attire, likely during a wedding ceremony. The woman is wearing a red sari with gold accents and the man is wearing a white shirt with pink and gold pants and hat. They are sitting on a couch with a table in front of them that has various items on it, including flowers and what appears to be a plate of sweets. The man is putting a necklace or headpiece on the woman's head.",
       "quality_score": 0.9,
       "prominent_subjects": [
         "man",
@@ -128,47 +129,87 @@
     "scenes": [
       {
         "image_path": "_ASL9923.jpg",
-        "duration": 5.0,
-        "caption": "The couple's special day begins",
-        "transition_in": "fade",
-        "transition_out": "fade",
+        "duration": 1.0,
+        "caption": "THEY LIVED HAPPILY EVER AFTER!",
+        "transition_in": "cut",
+        "transition_out": "cut",
         "timing_offset": 0.0
       },
       {
         "image_path": "_ASL9969.jpg",
-        "duration": 5.0,
-        "caption": "Love is in the air",
-        "transition_in": "fade",
-        "transition_out": "fade",
-        "timing_offset": 5.0
+        "duration": 1.0,
+        "caption": "TOGETHER FOREVER!",
+        "transition_in": "cut",
+        "transition_out": "cut",
+        "timing_offset": 1.0
       },
       {
         "image_path": "_ASL9971.jpg",
-        "duration": 5.0,
-        "caption": "Cherishing the moment",
-        "transition_in": "fade",
-        "transition_out": "fade",
-        "timing_offset": 10.0
+        "duration": 1.0,
+        "caption": "WITH LOVE AND DEVOTION!",
+        "transition_in": "cut",
+        "transition_out": "cut",
+        "timing_offset": 2.0
+      },
+      {
+        "image_path": "_ASL9976.jpg",
+        "duration": 1.0,
+        "caption": "THEIR LOVE STORY!",
+        "transition_in": "cut",
+        "transition_out": "cut",
+        "timing_offset": 3.0
       },
       {
         "image_path": "_ASL9984.jpg",
-        "duration": 3.0,
-        "caption": "Together forever",
-        "transition_in": "fade",
-        "transition_out": "fade",
-        "timing_offset": 15.0
+        "duration": 1.0,
+        "caption": "A LOVE THAT LASTS!",
+        "transition_in": "cut",
+        "transition_out": "cut",
+        "timing_offset": 4.0
       },
       {
         "image_path": "_ASL9995.jpg",
-        "duration": 3.0,
-        "caption": "Happiness abounds",
-        "transition_in": "fade",
-        "transition_out": "fade",
-        "timing_offset": 18.0
+        "duration": 1.0,
+        "caption": "HAPPILY EVER AFTER!",
+        "transition_in": "cut",
+        "transition_out": "cut",
+        "timing_offset": 5.0
+      },
+      {
+        "image_path": "AHD_6008.jpg",
+        "duration": 1.0,
+        "caption": "THE BRIDE PREPARES!",
+        "transition_in": "cut",
+        "transition_out": "cut",
+        "timing_offset": 6.0
+      },
+      {
+        "image_path": "AHD_6020.jpg",
+        "duration": 1.0,
+        "caption": "THE GROOM PREPARES!",
+        "transition_in": "cut",
+        "transition_out": "cut",
+        "timing_offset": 7.0
+      },
+      {
+        "image_path": "AHD_6024.jpg",
+        "duration": 1.0,
+        "caption": "THE CEREMONY!",
+        "transition_in": "cut",
+        "transition_out": "cut",
+        "timing_offset": 8.0
+      },
+      {
+        "image_path": "AHD_6052.jpg",
+        "duration": 1.0,
+        "caption": "THE FEAST!",
+        "transition_in": "cut",
+        "transition_out": "cut",
+        "timing_offset": 9.0
       }
     ],
-    "total_duration": 26.0,
-    "style": "cinematic",
+    "total_duration": 10.0,
+    "style": "upbeat",
     "music_suggestion": null
   },
   "compilation_result": {
@@ -177,7 +218,7 @@
     "error_line": null,
     "suggestions": []
   },
-  "retry_count": 1,
+  "retry_count": 0,
   "max_retries": 3,
   "render_output_path": "D:\\fotoowl-pipeline\\output\\reel.mp4",
   "status": "rendered",

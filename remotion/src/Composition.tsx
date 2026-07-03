@@ -1,52 +1,90 @@
 import React from 'react';
 import { AbsoluteFill, Sequence, Img, useCurrentFrame, useVideoConfig, interpolate, staticFile, registerRoot, Composition } from 'remotion';
 
-const scenes = [
-  {
-    "image_path": "_ASL9923.jpg",
-    "duration": 5.0,
-    "caption": "The couple's special day begins",
-    "transition_in": "fade",
-    "transition_out": "fade",
-    "timing_offset": 0.0
-  },
-  {
-    "image_path": "_ASL9969.jpg",
-    "duration": 5.0,
-    "caption": "Love is in the air",
-    "transition_in": "fade",
-    "transition_out": "fade",
-    "timing_offset": 5.0
-  },
-  {
-    "image_path": "_ASL9971.jpg",
-    "duration": 5.0,
-    "caption": "Cherishing the moment",
-    "transition_in": "fade",
-    "transition_out": "fade",
-    "timing_offset": 10.0
-  },
-  {
-    "image_path": "_ASL9984.jpg",
-    "duration": 3.0,
-    "caption": "Together forever",
-    "transition_in": "fade",
-    "transition_out": "fade",
-    "timing_offset": 15.0
-  },
-  {
-    "image_path": "_ASL9995.jpg",
-    "duration": 3.0,
-    "caption": "Happiness abounds",
-    "transition_in": "fade",
-    "transition_out": "fade",
-    "timing_offset": 18.0
-  }
-];
-
-const FotoOwlReel = () => {
-  const { width, height } = useVideoConfig();
-  const frame = useCurrentFrame();
+const FotoOwlReel: React.FC = () => {
+  const { fps } = useVideoConfig();
+  const scenes = [
+    {
+      "image_path": "_ASL9923.jpg",
+      "duration": 1.0,
+      "caption": "THEY LIVED HAPPILY EVER AFTER!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 0.0
+    },
+    {
+      "image_path": "_ASL9969.jpg",
+      "duration": 1.0,
+      "caption": "TOGETHER FOREVER!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 1.0
+    },
+    {
+      "image_path": "_ASL9971.jpg",
+      "duration": 1.0,
+      "caption": "WITH LOVE AND DEVOTION!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 2.0
+    },
+    {
+      "image_path": "_ASL9976.jpg",
+      "duration": 1.0,
+      "caption": "THEIR LOVE STORY!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 3.0
+    },
+    {
+      "image_path": "_ASL9984.jpg",
+      "duration": 1.0,
+      "caption": "A LOVE THAT LASTS!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 4.0
+    },
+    {
+      "image_path": "_ASL9995.jpg",
+      "duration": 1.0,
+      "caption": "HAPPILY EVER AFTER!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 5.0
+    },
+    {
+      "image_path": "AHD_6008.jpg",
+      "duration": 1.0,
+      "caption": "THE BRIDE PREPARES!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 6.0
+    },
+    {
+      "image_path": "AHD_6020.jpg",
+      "duration": 1.0,
+      "caption": "THE GROOM PREPARES!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 7.0
+    },
+    {
+      "image_path": "AHD_6024.jpg",
+      "duration": 1.0,
+      "caption": "THE CEREMONY!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 8.0
+    },
+    {
+      "image_path": "AHD_6052.jpg",
+      "duration": 1.0,
+      "caption": "THE FEAST!",
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "timing_offset": 9.0
+    }
+  ];
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#000' }}>
@@ -56,38 +94,27 @@ const FotoOwlReel = () => {
           durationInFrames={Math.round(scene.duration * 30)}
           key={index}
         >
-          <AbsoluteFill style={{ opacity: interpolate(frame, [0, 15], [0, 1], { extrapolateRight: 'clamp' }) }}>
-            <Img src={staticFile(scene.image_path)} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <AbsoluteFill>
+            <Img
+              src={staticFile(scene.image_path)}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+            />
             {scene.caption && (
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: 100,
-                  left: 100,
-                  fontSize: 40,
-                  color: 'white',
-                  fontWeight: 'bold',
-                }}
-              >
-                {scene.caption}
-              </div>
-            )}
-          </AbsoluteFill>
-          <AbsoluteFill style={{ opacity: interpolate(frame, [Math.round(scene.duration * 30) - 15, Math.round(scene.duration * 30)], [1, 0], { extrapolateLeft: 'clamp' }) }}>
-            <Img src={staticFile(scene.image_path)} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            {scene.caption && (
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: 100,
-                  left: 100,
-                  fontSize: 40,
-                  color: 'white',
-                  fontWeight: 'bold',
-                }}
-              >
-                {scene.caption}
-              </div>
+              <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <div
+                  style={{
+                    fontSize: 40,
+                    color: 'white',
+                    textShadow: '2px 2px 4px black',
+                  }}
+                >
+                  {scene.caption}
+                </div>
+              </AbsoluteFill>
             )}
           </AbsoluteFill>
         </Sequence>
@@ -100,7 +127,7 @@ registerRoot(() => (
   <Composition
     id="FotoOwlReel"
     component={FotoOwlReel}
-    durationInFrames={780}
+    durationInFrames={300}
     fps={30}
     width={1920}
     height={1080}
